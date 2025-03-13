@@ -70,6 +70,19 @@
             background: #44475a;
             border-radius: 5px;
         }
+
+        /* Link Style */
+        .purchase-link {
+            display: block;
+            margin-top: 15px;
+            color: #00d1b2;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .purchase-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -94,6 +107,9 @@
         <button onclick="calculateFee()">Calculate Fee</button>
 
         <div class="result" id="result">Transaction Fee will appear here.</div>
+        
+        <!-- Link to purchase BTC -->
+        <a href="https://www.coinbase.com/" target="_blank" id="purchase-link" class="purchase-link" style="display: none;">Purchase BTC</a>
     </div>
 
     <script>
@@ -155,6 +171,9 @@
 
             // Display results
             document.getElementById("result").innerHTML = `Transaction Fee: ${fee.toFixed(6)} ${crypto} (${feeInUsd.toFixed(2)} USD)`;
+
+            // Show "Purchase BTC" link after fee calculation
+            document.getElementById("purchase-link").style.display = "block";
         }
     </script>
 
